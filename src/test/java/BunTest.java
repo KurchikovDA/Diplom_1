@@ -12,6 +12,7 @@ public class BunTest {
 
     private final String name;
     private final float price;
+    private static final float DELTA = 0.01f; // Добавил Дельту, как константу
 
     // Конструктор для инициализации параметров
     public BunTest(String name, float price) {
@@ -44,6 +45,6 @@ public class BunTest {
         // Создаем тестовый объект
         Bun bun = new Bun(name, price);
         // Проверяем, что метод getPrice() возвращает правильную цену
-        Assert.assertEquals(price, bun.getPrice(), 0.01);
+        Assert.assertEquals(price, bun.getPrice(), DELTA);
     }
 }

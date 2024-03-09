@@ -19,6 +19,7 @@ public class BurgerGetPriceTest {
     private final Bun bun;
     private final Ingredient[] ingredients;
     private final float expectedPrice;
+    private static final float DELTA = 0.01f; // Добавл Дельту, как константу.
 
     // Конструктор для инициализации параметров теста
     public BurgerGetPriceTest(Bun bun, Ingredient[] ingredients, float expectedPrice) {
@@ -58,7 +59,7 @@ public class BurgerGetPriceTest {
             burger.addIngredient(ingredient);
         }
 
-        // Проверяем, что метод getPrice возвращает ожидаемую цену с учетом погрешности 0.01
-        Assert.assertEquals(expectedPrice, burger.getPrice(), 0.01);
+        // Проверяем, что метод getPrice возвращает ожидаемую цену с учетом погрешности DELTA
+        Assert.assertEquals(expectedPrice, burger.getPrice(), DELTA);
     }
 }

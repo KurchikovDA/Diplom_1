@@ -15,6 +15,7 @@ public class IngredientTest {
     private final IngredientType type;
     private final String name;
     private final float price;
+    private static final float DELTA = 0f; // Добавил Дельту, как константу.
 
     // Конструктор для инициализации параметров
     public IngredientTest(IngredientType type, String name, float price) {
@@ -50,6 +51,6 @@ public class IngredientTest {
         // Проверка соответствия заданных параметров мок-ингредиенту
         Assert.assertEquals(type, ingredient.getType());
         Assert.assertEquals(name, ingredient.getName());
-        Assert.assertEquals(price, ingredient.getPrice(), 0);
+        Assert.assertEquals(price, ingredient.getPrice(), DELTA);
     }
 }
